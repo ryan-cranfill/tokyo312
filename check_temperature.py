@@ -12,8 +12,12 @@ DEBUG = True
 
 
 def get_settings():
-    with open('local_settings.json') as f:
-        return json.load(f)
+    # todo: make this go to the right os.join place
+    try:
+        with open('local_settings.json') as f:
+            return json.load(f)
+    except:
+        return {'room_name': 'conf'}
 
 
 def check_temperature(debug=False):
