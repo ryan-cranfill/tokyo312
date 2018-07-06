@@ -1,3 +1,5 @@
 .idea
 client_secret.json
 credentials.json
+.env
+local.db
