@@ -73,5 +73,6 @@ if __name__ == '__main__':
     room = settings.get('room_name', 'chicken')
 
     conn = get_local_db()
+    create_temps_table(conn)
     insert_temp_hum(conn, temp, hum, room)
 
