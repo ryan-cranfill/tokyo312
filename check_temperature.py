@@ -19,10 +19,10 @@ def get_settings():
 def check_temperature(debug=False):
     temp_re = re.compile(r': (\d.*\d).*: (\d.*\d)')  # not great, i know
 
-    if debug:
-        temp_str = 'Temperature: {}   Humidity: {}\n'.format(random.random() * 30, random.random() * 30)
-    else:
+    try:
         temp_str = subprocess.check_output(['temperx'])
+    except:
+        temp_str = 'Temperature: {}   Humidity: {}\n'.format(random.random() * 30, random.random() * 30)
 
     logging.debug(temp_str)
 
